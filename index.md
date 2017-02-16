@@ -1,10 +1,12 @@
 ---
 layout: home
 ---
-# About Theme
+# About me
 
-This theme is Jekyll port of [vangeltzo.com](http://vangeltzo.com/) (by [Vangelis Tzortzis](https://github.com/srekoble)).
+Hi!
 
-To learn how to install and use this theme check out the [installation guide](http://taylantatli.me/Halve/halve-theme/) for more information.
+I'm a Computer Engineering graduate from the University of Castilla-La Mancha (UCLM). My Bachelor's Degree Final Project (TFG) is available [here](http://hdl.handle.net/10578/12273){:target="_blank"}.
 
-If you have a question, find a bug, or just want to say hi, please open an [issue on GitHub](https://github.com/TaylanTatli/Halve/issues/new).
+Programming (C/C++, Java, python). Hardware & Networks. Pizza.
+
+If you want more information you can download my CV in [English](https://javiersevball.github.io/download/CV_JavierSevilla_ENG.pdf){:target="_blank"} and [Spanish](https://javiersevball.github.io/download/CV_JavierSevilla.pdf){:target="_blank"}.
