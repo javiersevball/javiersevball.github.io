@@ -11,6 +11,6 @@ I currently work at [TECNOBIT (Grupo Oesía)](http://grupooesia.com/ingenieria-t
 
 Programming. Hardware & networks. Pizza.
 
-If you want more information you can download my CV in [English](https://javiersevball.github.io/download/CV_JavierSevilla_ENG.pdf){:target="_blank"} and [Spanish](https://javiersevball.github.io/download/CV_JavierSevilla.pdf){:target="_blank"}.
+If you want more information you can download my CV in [English](https://javiersevball.github.io/download/CV_JavierSevilla_EN.pdf){:target="_blank"} and [Spanish](https://javiersevball.github.io/download/CV_JavierSevilla.pdf){:target="_blank"}.
 
 
