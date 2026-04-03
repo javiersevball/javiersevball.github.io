@@ -1,0 +1,308 @@
+﻿@page "/"
+
+<style>
+    .skill-tag {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 0.85rem;
+        color: rgba(255, 255, 255);
+        transition: all 0.2s ease;
+        cursor: default;
+        white-space: nowrap;
+    }
+
+    .skill-tag:hover {
+        color: var(--mud-palette-primary);
+        text-shadow: 0 0 8px rgba(0, 242, 255, 0.4);
+    }
+</style>
+
+<PageTitle>Javier Sevilla | Software Development Lead</PageTitle>
+
+<MudContainer MaxWidth="MaxWidth.Large" Class="mt-4 animate__animated animate__fadeIn">
+    <MudGrid>
+        @* Header / about me section *@
+        <MudItem xs="12">
+            <div class="pa-6" style="border-left: 3px solid var(--mud-palette-primary); background: rgba(0, 242, 255, 0.015); border-radius: 0 4px 4px 0;">
+                @* Block header *@
+                <div class="d-flex justify-space-between align-center mb-2">
+                    <MudText Typo="Typo.h6" Style="font-weight: 800; text-transform: uppercase; color: var(--mud-palette-primary); letter-spacing: 2px;">
+                        System Overview
+                    </MudText>
+                </div>
+
+                @* Sector metadata *@
+                <div class="mb-6">
+                    <MudText Typo="Typo.caption" Style="font-family: 'JetBrains Mono', monospace; letter-spacing: 1px; font-weight: 700;">
+                        SECTOR: <span style="color: var(--mud-palette-secondary);">AEROSPACE & DEFENSE</span>
+                    </MudText>
+                </div>
+
+                @* Main description *@
+                <MudText Typo="Typo.body1" Style="font-family: 'JetBrains Mono', monospace; line-height: 1.6; opacity: 0.9;">
+                    <span style="color: var(--mud-palette-primary); font-weight: bold;">></span> Hi there! I'm
+                    <span style="color: var(--mud-palette-secondary); font-weight: bold;">Javier</span>, a Computer Engineering graduate
+                    currently working at <span style="font-weight: bold;">TECNOBIT</span> as a <span style="border-bottom: 1px solid var(--mud-palette-primary);">Software Development Lead</span>.
+                </MudText>
+
+                @* Closing line*@
+                <div class="mt-4 pt-4" style="border-top: 1px dashed rgba(0, 242, 255, 0.1);">
+                    <MudText Typo="Typo.caption" Style="font-family: 'JetBrains Mono', monospace; letter-spacing: 1px; font-weight: 700; opacity: 0.8;">
+                        PROGRAMMING // CLEAN ARCHITECTURE // ROBUST & SCALABLE SYSTEMS // PIZZA
+                    </MudText>
+                </div>
+            </div>
+        </MudItem>
+
+        @* Core capabilities section *@
+        <MudItem xs="12" Class="mt-8">
+            <div class="pa-6" style="border: 1px solid rgba(0, 242, 255, 0.1); background: rgba(0, 242, 255, 0.005); border-radius: 4px;">
+                <MudText Typo="Typo.h6" Style="color: var(--mud-palette-primary); letter-spacing: 2px; font-weight: 900;">
+                    CORE CAPABILITIES
+                </MudText>
+
+                <MudGrid Class="mt-4" Spacing="4">
+                    @* Languages *@
+                    <MudItem xs="12" sm="6">
+                        <MudText Typo="Typo.caption" Class="d-block mb-2" Style="opacity: 0.5; font-weight: bold; text-transform: uppercase;">Languages</MudText>
+                        <div class="d-flex flex-wrap gap-2">
+                            @foreach (var item in new[] { "C#", "C++", "Python", "SQL" })
+                            {
+                                <div class="skill-tag">[ @item ]</div>
+                            }
+                        </div>
+                    </MudItem>
+
+                    @* Frameworks *@
+                    <MudItem xs="12" sm="6">
+                        <MudText Typo="Typo.caption" Class="d-block mb-2" Style="opacity: 0.5; font-weight: bold; text-transform: uppercase;">Frameworks & UI</MudText>
+                        <div class="d-flex flex-wrap gap-2">
+                            @foreach (var item in new[] { ".NET", ".NET Framework", "Avalonia", "Blazor", "ASP.NET", "Qt", "OpenCV"})
+                            {
+                                <div class="skill-tag">[ @item ]</div>
+                            }
+                        </div>
+                    </MudItem>
+
+                    @* Design and rchitecture *@
+                    <MudItem xs="12" sm="6">
+                        <MudText Typo="Typo.caption" Class="d-block mb-2" Style="opacity: 0.5; font-weight: bold; text-transform: uppercase;">Design & Architecture</MudText>
+                        <div class="d-flex flex-wrap gap-2">
+                            @foreach (var item in new[] { "Clean code", "Clean architecture", "UML" })
+                            {
+                                <div class="skill-tag">[ @item ]</div>
+                            }
+                        </div>
+                    </MudItem>
+
+                    @* Tools *@
+                    <MudItem xs="12" sm="6">
+                        <MudText Typo="Typo.caption" Class="d-block mb-2" Style="opacity: 0.5; font-weight: bold; text-transform: uppercase;">DevOps & VCS</MudText>
+                        <div class="d-flex flex-wrap gap-2">
+                            @foreach (var item in new[] { "Jenkins", "Git", "SVN" })
+                            {
+                                <div class="skill-tag">[ @item ]</div>
+                            }
+                        </div>
+                    </MudItem>
+                </MudGrid>
+            </div>
+        </MudItem>
+
+        @* Professional experience section *@
+        <MudItem xs="12" Class="mt-8">
+            <div class="pa-6" style="border: 1px solid rgba(0, 242, 255, 0.1); background: rgba(0, 242, 255, 0.005); border-radius: 4px;">
+                <MudText Typo="Typo.h6" Class="mb-6" Style="color: var(--mud-palette-primary); letter-spacing: 2px; font-weight: 900;">
+                    PROFESSIONAL EXPERIENCE
+                </MudText>
+
+                @* Entity: TECNOBIT *@
+                <div class="mb-8 d-flex align-center">
+                    <MudIcon Icon="@Icons.Material.Filled.Business" Color="Color.Primary" Class="mr-3" />
+                    <MudText Typo="Typo.h5" Style="font-weight: 800; letter-spacing: 1px;">TECNOBIT - GRUPO OESÍA</MudText>
+                    <MudChip T="string" Variant="Variant.Text" Color="Color.Primary" Size="Size.Small" Class="ml-4" Style="font-family: 'JetBrains Mono'; opacity: 0.7;">@GetTotalExperience(2017, 3)</MudChip>
+                </div>
+
+                <div style="border-left: 2px solid rgba(0, 242, 255, 0.1); margin-left: 12px; padding-left: 30px;">
+                    @* Rol: LEAD *@
+                    <div class="mb-10" style="position: relative;">
+                        <div style="position: absolute; left: -37px; top: 8px; width: 12px; height: 12px; border-radius: 50%; background: var(--mud-palette-primary); box-shadow: 0 0 10px var(--mud-palette-primary);"></div>
+                        <div class="d-flex justify-space-between align-start flex-wrap">
+                            <MudText Typo="Typo.subtitle1" Style="color: var(--mud-palette-secondary); font-weight: bold; text-transform: uppercase;">Software Development Lead | Test Engineering</MudText>
+                            <MudText Typo="Typo.caption" Style="font-family: 'JetBrains Mono'; opacity: 0.6;">[ OCT 2024 - PRESENT ]</MudText>
+                        </div>
+                        <MudText Typo="Typo.body2" Class="mt-2" Style="font-family: 'JetBrains Mono'; opacity: 0.9; line-height: 1.5;">
+                            Leading a team responsible for the end-to-end development of software for Automated Test Systems;
+                            specializing in the aerospace and defense fields. Overseeing all phases of software engineering,
+                            from requirements gathering and system architecture to coding, integration and validation.
+                            Ensuring compliance with industry standards and integrating new methodologies to optimize test processes
+                            and improve their performance, as well as enabling efficient production and maintenance processes.
+                            <br /><br />
+                            Mainly focused on delivering innovative solutions for testing automation in complex environments.
+                        </MudText>
+                    </div>
+
+                    @* Rol: SW ENGINEER (TEST) *@
+                    <div class="mb-10" style="position: relative;">
+                        <div style="position: absolute; left: -37px; top: 8px; width: 12px; height: 12px; border-radius: 50%; background: rgba(0, 242, 255, 0.4);"></div>
+                        <div class="d-flex justify-space-between align-start flex-wrap">
+                            <MudText Typo="Typo.subtitle1" Style="font-weight: bold; text-transform: uppercase;">Software Engineer | Test Engineering</MudText>
+                            <MudText Typo="Typo.caption" Style="font-family: 'JetBrains Mono'; opacity: 0.6;">[ NOV 2021 - SEPT 2024 ]</MudText>
+                        </div>
+                        <ul style="list-style: none; padding: 0; margin-top: 8px;">
+                            <li style="font-family: 'JetBrains Mono'; font-size: 0.85rem; opacity: 0.9; margin-bottom: 4px;">-- SW Team Leadership.</li>
+                            <li style="font-family: 'JetBrains Mono'; font-size: 0.85rem; opacity: 0.9; margin-bottom: 4px;">-- Development of automatic test SW for new products in production.</li>
+                            <li style="font-family: 'JetBrains Mono'; font-size: 0.85rem; opacity: 0.9; margin-bottom: 4px;">-- Evolution and standarization of test SW used in production.</li>
+                            <li style="font-family: 'JetBrains Mono'; font-size: 0.85rem; opacity: 0.9; margin-bottom: 4px;">-- Implementation of new SW methodologies for Industry 4.0.</li>
+                            <li style="font-family: 'JetBrains Mono'; font-size: 0.85rem; opacity: 0.9;">-- Continuous integration of SW components.</li>
+                        </ul>
+                    </div>
+
+                    @* Rol: SW ENGINEER (OPTRONICS) *@
+                    <div class="mb-10" style="position: relative;">
+                        <div style="position: absolute; left: -37px; top: 8px; width: 12px; height: 12px; border-radius: 50%; background: rgba(0, 242, 255, 0.2);"></div>
+                        <div class="d-flex justify-space-between align-start flex-wrap">
+                            <MudText Typo="Typo.subtitle1" Style="font-weight: bold; text-transform: uppercase;">Software Engineer | Optronics</MudText>
+                            <MudText Typo="Typo.caption" Style="font-family: 'JetBrains Mono'; opacity: 0.6;">[ FEB 2018 - OCT 2021 ]</MudText>
+                        </div>
+                        <ul style="list-style: none; padding: 0; margin-top: 8px;">
+                            <li style="font-family: 'JetBrains Mono'; font-size: 0.85rem; opacity: 0.9; margin-bottom: 4px;">-- Design, implementation, and integration of software components for Automated Test Equipment (ATE).</li>
+                            <li style="font-family: 'JetBrains Mono'; font-size: 0.85rem; opacity: 0.9; margin-bottom: 4px;">-- Embedded software development.</li>
+                            <li style="font-family: 'JetBrains Mono'; font-size: 0.85rem; opacity: 0.9; margin-bottom: 4px;">-- Implementation and integration of automated test sequences for the verification and qualification of optronic systems.</li>
+                            <li style="font-family: 'JetBrains Mono'; font-size: 0.85rem; opacity: 0.9;">-- Development and maintenance of applications for manual control of systems.</li>
+                        </ul>
+                    </div>
+
+                    @* TRAINEE *@
+                    <div style="position: relative;">
+                        <div style="position: absolute; left: -37px; top: 8px; width: 12px; height: 12px; border-radius: 50%; background: rgba(255, 255, 255, 0.1);"></div>
+                        <div class="d-flex justify-space-between align-start flex-wrap">
+                            <MudText Typo="Typo.subtitle1" Style="font-weight: bold; text-transform: uppercase;">Trainee | Optronics</MudText>
+                            <MudText Typo="Typo.caption" Style="font-family: 'JetBrains Mono'; opacity: 0.6;">[ MAR 2017 - JAN 2018 ]</MudText>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </MudItem>
+
+        @* Academic background section *@
+        <MudItem xs="12" Class="mt-8">
+            <div class="pa-6" style="border: 1px solid rgba(0, 242, 255, 0.1); background: rgba(0, 242, 255, 0.005); border-radius: 4px;">
+                <MudText Typo="Typo.h6" Class="mb-6" Style="color: var(--mud-palette-primary); letter-spacing: 2px; font-weight: 900;">
+                    ACADEMIC BACKGROUND
+                </MudText>
+
+                <MudGrid Spacing="4">
+                    @* Degree section *@
+                    <MudItem xs="12" md="7">
+                        <div class="d-flex align-start mb-4">
+                            <MudIcon Icon="@Icons.Material.Filled.School" Color="Color.Primary" Class="mr-4 mt-1" />
+                            <div>
+                                <MudText Typo="Typo.h6" Style="font-weight: 800; text-transform: uppercase;">
+                                    Bachelor's Degree in Computer Engineering
+                                </MudText>
+                                <MudText Typo="Typo.body1" Style="font-family: 'JetBrains Mono'; opacity: 0.7;">
+                                    University of Castilla-La Mancha (UCLM)
+                                </MudText>
+                                <MudText Typo="Typo.caption" Style="font-family: 'JetBrains Mono'; opacity: 0.5;">
+                                    [ 2012 — 2017 ]
+                                </MudText>
+                            </div>
+                        </div>
+                    </MudItem>
+
+                    @* Featured project *@
+                    <MudItem xs="12" md="5">
+                        <div class="pa-4" style="border: 1px dashed rgba(255, 152, 0, 0.3); background: rgba(255, 152, 0, 0.02); border-radius: 4px; position: relative;">
+                            
+                            <MudText Typo="Typo.overline" Style="color: var(--mud-palette-secondary); font-weight: 900; letter-spacing: 1px;">
+                                CORE PROJECT // BACHELOR'S THESIS
+                            </MudText>
+                            
+                            <MudText Typo="Typo.subtitle2" Class="mt-1" Style="font-weight: 800; line-height: 1.2;">
+                                Development tool for dynamically reconfigurable applications on FPGA
+                            </MudText>
+
+                            <div class="d-flex align-center mt-2 flex-wrap gap-2">
+                                <MudChip T="string" Variant="Variant.Text" Color="Color.Secondary" Size="Size.Small" Class="pa-0" Style="font-weight: 900;">
+                                    [ GRADE: DISTINCTION ]
+                                </MudChip>
+                                <MudLink href="https://ruidera.uclm.es/items/bbece58c-ac2c-4af3-a787-02327d24009f" Target="_blank" Underline="Underline.Hover" Style="color: var(--mud-palette-primary); font-family: 'JetBrains Mono'; font-size: 0.7rem; font-weight: bold;">
+                                    <MudIcon Icon="@Icons.Material.Filled.Link" Size="Size.Small" Class="mr-1" Style="vertical-align: middle;"/> VIEW_PROJECT
+                                </MudLink>
+                            </div>
+
+                            <MudText Typo="Typo.body2" Class="mt-3" Style="font-family: 'JetBrains Mono'; font-size: 0.75rem; opacity: 0.8; line-height: 1.4;">
+                                Graphical tool for the development, implementation, and management of dynamically reconfigurable applications on Xilinx devices.
+                            </MudText>
+                        </div>
+                    </MudItem>
+                </MudGrid>
+            </div>
+        </MudItem>
+
+        @* Contact Section *@
+        <MudItem xs="12" Class="mt-10">
+            <div class="pa-8 d-flex flex-column align-center" style="border: 2px dashed rgba(0, 242, 255, 0.2); background: rgba(0, 242, 255, 0.02); border-radius: 8px;">
+                <MudText Typo="Typo.h6" Style="color: var(--mud-palette-primary); font-family: 'JetBrains Mono'; font-weight: 900; letter-spacing: 2px;">
+                    > SYSTEM_INQUIRY
+                </MudText>
+                <MudText Typo="Typo.body2" Class="mt-2 mb-6" Style="opacity: 0.7; font-family: 'JetBrains Mono'; text-align: center;">
+                    Interesting project in mind? Looking for a Software Lead with expertise in Aerospace & Defense?
+                    <br /><br />
+                    Let's talk about software, leadership insights, or complex system architecture.
+                </MudText>
+                <MudButton Variant="Variant.Outlined" 
+                        Color="Color.Primary" 
+                        Size="Size.Large"
+                        Href="https://www.linkedin.com/in/javiersevball/"
+                        Target="_blank"
+                        Style="font-family: 'JetBrains Mono'; font-weight: bold; border-width: 2px;">
+                    SEND MESSAGE
+                </MudButton>
+            </div>
+        </MudItem>
+
+        @* Footer *@
+        <MudItem xs="12" Class="mt-12 mb-6">
+            <div class="d-flex justify-center align-center" style="opacity: 0.6; border-top: 1px dashed rgba(0, 242, 255, 0.1); padding-top: 24px;">
+                <MudText Typo="Typo.caption" Style="font-family: 'JetBrains Mono', monospace; letter-spacing: 1px; text-transform: uppercase;">
+                    <span style="color: var(--mud-palette-primary); font-weight: bold;">></span> 
+                    Made by 
+                    <MudLink href="https://github.com/javiersevball" Target="_blank" Underline="Underline.None" 
+                             Style="color: #fff; font-weight: bold; transition: all 0.2s ease;" 
+                             onmouseover="this.style.color='var(--mud-palette-primary)'" 
+                             onmouseout="this.style.color='#fff'">
+                        javiersevball
+                    </MudLink>
+                    Using
+                    <span style="color: var(--mud-palette-secondary); font-weight: bold;">Blazor</span>
+                </MudText>
+            </div>
+        </MudItem>
+
+    </MudGrid>
+</MudContainer>
+
+@code {
+    /// <summary>
+    /// Gets the total experience in years and months.
+    /// </summary>
+    /// <returns></returns>
+    private string GetTotalExperience(int startYear, int startMonth)
+    {
+        DateTime startDate = new DateTime(startYear, startMonth, 1);
+        DateTime endDate = DateTime.Now;
+
+        int years = endDate.Year - startDate.Year;
+        int months = endDate.Month - startDate.Month;
+
+        if (months < 0)
+        {
+            years--;
+            months += 12;
+        }
+
+        return $"{years} YEARS // {months} MONTHS";
+    }
+}

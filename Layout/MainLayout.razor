@@ -1,0 +1,207 @@
+﻿@inherits LayoutComponentBase
+@using System.Timers
+
+<MudThemeProvider Theme="_jsevillaTheme"IsDarkMode="true" />
+<MudDialogProvider />
+<MudSnackbarProvider />
+
+<style>
+    .split-container {
+        display: flex;
+        height: 100vh;
+        overflow: hidden;
+    }
+    .left-side {
+        width: 450px;
+        background-image: linear-gradient(rgba(11, 14, 20, 0.85), rgba(11, 14, 20, 0.85)), url('images/background.jpg');
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        padding: 3rem 2rem;
+        border-right: 1px solid rgba(255,255,255,0.05);
+    }
+    .right-side {
+        width: 100%;
+        overflow-y: auto;
+        padding: 5rem;
+        background-color: #0d1117;
+    }
+    
+    @@media (max-width: 960px) {
+        .split-container {
+            flex-direction: column;
+            height: auto;
+            overflow: visible;
+        }
+        .left-side {
+            width: 100%;
+            height: auto;
+            padding: 2rem;
+            border-right: none;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            gap: 2.5rem;
+        }
+        .right-side {
+            width: 100%;
+            padding: 2rem;
+        }
+    }
+</style>
+
+<div class="split-container">
+    <div class="left-side">
+        @* Upper part: photo, names, links *@
+        <div class="d-flex flex-column align-center mt-10">
+            <MudImage
+                Src="images/profile-photo.jpg"
+                Elevation="5"
+                Class="mb-6 rounded-0"
+                Style="width:180px; height:180px; object-fit: cover; border: 4px solid var(--mud-palette-primary);" />
+
+            <MudText Typo="Typo.h4" Align="Align.Center" Style="font-weight: 800; letter-spacing: -1px;">
+                JAVIER SEVILLA BALLESTEROS
+            </MudText>
+            <MudText Typo="Typo.h6" Color="Color.Secondary" Align="Align.Center" Class="mt-2" Style="font-weight: 700;">
+                SOFTWARE ENGINEER
+            </MudText>
+
+            <div class="d-flex flex-column mt-6 pa-3" style="background: rgba(0, 242, 255, 0.03); border-left: 3px solid var(--mud-palette-primary); min-width: 220px;">
+                @* Status indicator *@
+                <div class="d-flex align-center mb-2">
+                    <div class="animate__animated animate__flash animate__infinite animate__slow" 
+                        style="width: 8px; height: 8px; background: #00f2ff; border-radius: 50%; margin-right: 10px; box-shadow: 0 0 8px #00f2ff;">
+                    </div>
+                    <MudText Typo="Typo.caption" Style="font-family: 'JetBrains Mono', monospace; color: #00f2ff; font-weight: 700;">
+                        SYSTEM: ONLINE // NODE: SPAIN
+                    </MudText>
+                </div>
+
+                @* Location *@
+                <MudText Typo="Typo.caption" Style="font-family: 'JetBrains Mono', monospace; color: #00f2ff; font-size: 0.7rem;">
+                    > LOCATION: 38.7621° N, 3.3852° W
+                </MudText>
+
+                <MudText Typo="Typo.caption" Style="font-family: 'JetBrains Mono', monospace; color: #00f2ff; font-size: 0.7rem; letter-spacing: 1px;">
+                    @_uptimeDisplay
+                </MudText>
+
+                @* Fuel indicator *@
+                <div class="d-flex align-center mt-2">
+                    <MudText Typo="Typo.caption" Style="font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; margin-right: 8px;">
+                        > FUEL [COFFEE]:
+                    </MudText>
+                    <div style="flex-grow: 1; height: 4px; background: rgba(255,255,255,0.1);">
+                        <div style="width: 70%; height: 100%; background: #00f2ff; box-shadow: 0 0 5px #00f2ff;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="d-flex gap-2">
+            <MudButton Variant="Variant.Outlined" 
+                    Color="Color.Primary" 
+                    Class="rounded-0"
+                    Href="https://github.com/javiersevball/" 
+                    Target="_blank"
+                    StartIcon="@Icons.Custom.Brands.GitHub">GitHub</MudButton>
+            <MudButton Variant="Variant.Outlined" 
+                    Color="Color.Primary" 
+                    Class="rounded-0"
+                    Href="https://www.linkedin.com/in/javiersevball/" 
+                    Target="_blank"
+                    StartIcon="@Icons.Custom.Brands.LinkedIn">LinkedIn</MudButton>
+        </div>
+    </div>
+
+    <div class="right-side">
+        @Body
+    </div>
+</div>
+
+@code {
+    /// <summary>
+    /// Custom theme definition.
+    /// </summary>
+    private MudTheme _jsevillaTheme = new MudTheme()
+    {
+        PaletteDark = new PaletteDark()
+        {
+            Primary = "#00f2ff",
+            Secondary = "#ffb300",
+            Tertiary = "#27ae60",
+            Background = "#0b0e14",
+            Surface = "#161b22",
+            AppbarBackground = "#0b0e14",
+            DrawerBackground = "#0b0e14",
+            TextPrimary = "#f0f6fc",
+            TextSecondary = "#8b949e",
+            ActionDefault = "#00f2ff"
+        },
+        Typography = new Typography()
+        {
+            Default = new DefaultTypography()
+            {
+                FontFamily = new[] { "Space Grotesk", "Helvetica", "Arial", "sans-serif" },
+                FontSize = "1rem",
+                LineHeight = "1.5"
+            },
+            H2 = new H2Typography() { 
+                FontWeight = "800", 
+                LetterSpacing = "-.04em",
+                LineHeight = "1.1" 
+            },
+            H4 = new H4Typography() { 
+                FontWeight = "800", 
+                LetterSpacing = "-.02em" 
+            },
+            Button = new ButtonTypography() { 
+                TextTransform = "none", 
+                FontWeight = "600",
+                LetterSpacing = ".02em"
+            }
+        }
+    };
+
+    /// <summary>
+    /// Birthdate for uptime calculation.
+    /// </summary>
+    private DateTime _birthDate = new DateTime(1994, 12, 12);
+
+    /// <summary>
+    /// Uptime display text.
+    /// </summary>
+    private string _uptimeDisplay = "";
+
+    /// <summary>
+    /// Timer to update uptime every second.
+    /// </summary>
+    private Timer? _timer;
+
+    /// <summary>
+    /// Initialize the timer to update uptime every second.
+    /// </summary>
+    protected override void OnInitialized()
+    {
+        _timer = new Timer(1000);
+        _timer.Elapsed += (sender, e) => UpdateUptime();
+        _timer.AutoReset = true;
+        _timer.Enabled = true;
+
+        UpdateUptime();
+    }
+
+    /// <summary>
+    /// Calculate and update the uptime display based on the birthdate.
+    /// </summary>
+    private void UpdateUptime()
+    {
+        var diff = DateTime.Now - _birthDate;
+        _uptimeDisplay = $"> UPTIME: {Math.Floor(diff.TotalSeconds):N0} SECONDS";
+        
+        // Update blazor UI
+        InvokeAsync(StateHasChanged);
+    }
+}

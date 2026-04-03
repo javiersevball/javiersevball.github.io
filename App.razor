@@ -1,0 +1,34 @@
+﻿<Router AppAssembly="@typeof(App).Assembly">
+    <Found Context="routeData">
+        <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)"/>
+        <FocusOnNavigate RouteData="@routeData" Selector="h1" />
+    </Found>
+    <NotFound>
+        <LayoutView Layout="@typeof(Layout.MainLayout)">
+            <div class="d-flex flex-column align-center justify-center mt-15 pa-6" 
+                style="border: 1px solid #ff5252; background: rgba(255, 82, 82, 0.05); border-radius: 4px; font-family: 'JetBrains Mono', monospace;">
+                
+                <MudIcon Icon="@Icons.Material.Filled.GpsOff" Style="font-size: 3rem; color: #ff5252;" />
+                
+                <MudText Typo="Typo.h5" Style="color: #ff5252; font-weight: bold; letter-spacing: 2px;" Class="mt-4">
+                    [ ERROR_404: NOT_FOUND ]
+                </MudText>
+                
+                <MudText Typo="Typo.body2" Align="Align.Center" Style="opacity: 0.8; max-width: 400px;" Class="my-6">
+                    Verify the uplink and try again.
+                </MudText>
+
+                <div style="font-size: 0.7rem; opacity: 0.5; width: 100%; border-top: 1px solid rgba(255, 82, 82, 0.2);" class="pt-4 mb-6">
+                    > STATUS: SECTOR_UNKNOWN
+                </div>
+
+                <MudButton Href="/" 
+                        Variant="Variant.Outlined" 
+                        Color="Color.Error" 
+                        Style="font-family: 'JetBrains Mono'; font-weight: bold; border-width: 2px;">
+                    RETURN_TO_BASE
+                </MudButton>
+            </div>
+        </LayoutView>
+    </NotFound>
+</Router>
